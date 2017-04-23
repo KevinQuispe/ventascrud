@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block title %}Registrar Producto{% endblock %}
+{% block content %}
+<div class="container ">
+	<div class="col-md-6 formulario">
+	<form method="post">
+			<legend>Datos de Producto</legend>
+				{% csrf_token %} 
+				{{form.as_p }}
+				
+		<button type="submit" class="btn btn-primary">Guardar</button>
+		<button type="reset" class="btn btn-info">Nuevo</button>
+		<a href="{% url 'producto:producto_listar'%}" class="btn btn-danger">Cancelar</a>
+	
+	</form>
+</div>
+</div>
+{% endblock %}
